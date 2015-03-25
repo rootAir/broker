@@ -1,0 +1,1 @@
+web: gunicorn rootair.wsgi --log-file -
