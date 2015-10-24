@@ -50,8 +50,7 @@ class findOptionsLoop(findOptionsLoop):
 # @shared_task
 @app.task  #(queue='sync_broker')
 def sync_broker():
-    _options = find_options()
-    sync_broker = syncBroker(_options)
+    sync_broker = syncBroker()
     sync_broker.run()
 
 # @shared_task

@@ -95,7 +95,7 @@ class robotBroker(RobotRemoteChrome):
         :return:
         """
         super(robotBroker, self).__init__(*args, **kwargs)
-        driver.manage().window().setSize(windowMinSize)
+        # self.driver.manage().window().setSize(windowMinSize)
         self.switch_to_window_broker()
         self.do_login(self._usr, password=None)
         self.is_logged()
@@ -133,7 +133,7 @@ class robotBroker(RobotRemoteChrome):
             _caption =  self.driver.find_element_by_id(broker.get('BROKER_TXT_LOGIN'))
             _caption.clear()
             _caption.send_keys(username)
-            self.driver.find_element_by_id(broker.get('BROKER_BTN_OK'))).click()
+            self.driver.find_element_by_id(broker.get('BROKER_BTN_OK')).click()
             self.driver.find_element_by_class_name('login').click()
         except:
             self.do_login(username)
